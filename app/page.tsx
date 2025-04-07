@@ -1,10 +1,3 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Kebab.ws",
-  description: "🐸",
-}
-
 export default function Home() {
   return (
     <main>
