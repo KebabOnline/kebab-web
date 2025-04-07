@@ -1,4 +1,4 @@
-import {Home, Gamepad } from "lucide-react"
+import {Home, Gamepad, User, Twitter, Github } from "lucide-react"
 
 import {
     Sidebar,
@@ -24,7 +24,25 @@ const items = [
       url: "/kebabmon",
       icon: Gamepad,
     }
-  ]
+]
+
+const socials = [
+    {
+        title: "Github",
+        url: "https://github.com/KebabOnline",
+        icon: Github,
+    },    
+    {
+        title: "Xitter",
+        url: "https://x.com/KebabOffTheGrid",
+        icon: Twitter,
+    },
+    {
+        title: "SpaceHey",
+        url: "https://spacehey.com/cashkebab",
+        icon: User,
+    }
+]
 
 export function AppSidebar() {
     return (
@@ -50,6 +68,25 @@ export function AppSidebar() {
                             ))}
                         </SidebarMenu>
                     </SidebarGroupContent>
+                </SidebarGroup>
+
+                <SidebarGroup>
+                    <SidebarGroupLabel>Socials</SidebarGroupLabel>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            {socials.map((item) => (
+                                <SidebarMenuItem key={item.title}>
+                                    <SidebarMenuButton asChild>
+                                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                            <item.icon />
+                                            <span>{item.title}</span>
+                                        </a>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+                            ))}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+
                 </SidebarGroup>
             </SidebarContent>
         </Sidebar>
